@@ -36,6 +36,6 @@ If you don't change the source code, you have to start 2 processes:
 From the "cmd remote" console, start WinSpoof.exe, WinSpoof will find the process cmd with argument spoofed, and the execute cmd.exe as an
 sub process.
 
-
+This code is not 100% stable, this will be fixed over time :-)
 
 
