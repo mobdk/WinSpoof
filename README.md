@@ -14,8 +14,10 @@ by calling:
 All API calls happens in memory only, no reference to ntdll og kernel32 on file system, so the machine code can be obfuscated, calls to 
 function in kernel32 (in memory) is done by resolving the base address of kernel32 and then lookup the hash value of the function and then:
 
+```
   movabs rax, FunctionPtr
   jmp rax
+```
   
 Function in ntdll (in memory) use the same steps, but insted of using the classic 11 byte syscall, it uses 313 bytes.
 
