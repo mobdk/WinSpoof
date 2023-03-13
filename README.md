@@ -4,10 +4,12 @@ Use TpAllocWork, TpPostWork and TpReleaseWork to execute machine code
 This PoC code demostrate how TpAllocWork, TpPostWork and TpReleaseWork can be used to execute machine code, the code start a image file
 by calling: 
 
+```
   TpAllocWork ---> RtlCreateProcessParametersEx
   TpAllocWork ---> ZwCreateUserProcess (syscalled)
   TpAllocWork ---> ZwResumeThread (syscalled)
   TpAllocWork ---> RtlDestroyProcessParameters
+```  
   
 All API calls happens in memory only, no reference to ntdll og kernel32 on file system, so the machine code can be obfuscated, calls to 
 function in kernel32 (in memory) is done by resolving the base address of kernel32 and then lookup the hash value of the function and then:
